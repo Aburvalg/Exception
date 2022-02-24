@@ -1,5 +1,7 @@
 package netology.repository;
 
+import netology.domain.NotFoundException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import netology.domain.Book;
@@ -36,11 +38,7 @@ class ProductRepositoryTest {
     @Test
     void shouldRemoveByNullId() {
 
-        repo.removeById(4);
-
-        Product[] expected = {first, third};
-        Product[] actual = repo.showAll();
-        assertArrayEquals(expected, actual);
+        Assertions.assertThrows(NotFoundException.class, () -> repo.removeById(4));
     }
 
 }

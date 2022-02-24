@@ -17,10 +17,10 @@ public class ProductRepository {
     }
 
     public void save(Product product) throws AlreadyExistsException {
-
-//        if (findById(id) == product.getId()) {
-//            throw new AlreadyExistsException("Product with id: " + id + " already exists");
-//        }
+//            int id= product.getId();
+//            //if (product.getId() == null);
+//        if (findById(id) ==null);
+//        {throw new AlreadyExistsException("Product with id:" + id + " already exists");}
 
         int length = products.length + 1;
         Product[] tmp = new Product[length];
